@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
+  const ref = {};
   let timer = document.getElementById('counter');
   let pauseButton = document.getElementById('pause');
   let buttonArr = document.getElementsByClassName('disable');
@@ -39,16 +40,32 @@ document.addEventListener("DOMContentLoaded", function() {
     timer.innerHTML--;
   }
 
-  function addLike() {
-    // if within this document we can get an element with the id of this number
-    // then add a like to the associated number
+
+  function addLike () {
+
     let num = timer.innerHTML;
-    let newContent = `Number ${num} has ${likeNum} likes.`;
-    let likeNum = 1;
 
-    let newLi = document.createElement('li');
-    let newContent = document.createTextNode(newContent);
+    if (ref.hasOwnProperty(num)) {ref[num]++}
+    else {ref[num] = 1}
 
-    // otherwise create a new element with that number and add a like to it
+    x = getElementById("likes")
+    x.innerHTML = ref
+
+    //ABOVE CODE CORRECTLY POPULATES OUR REF OBJECT WHICH HOLDS KEY (TIMER NUMBER) - VALUE (NUMBER OF LIKES) PAIRS
+
+
+    //BELOW CODE WAS PARTIAL ATTEMPT TO CREATE NEW LINES IN HTML
+    // // create a new div element
+    // var newDiv = document.createElement("div");
+    // // and give it some content
+    // var newContent = document.createTextNode(`Number ${num} has ${likeNum} likes.`);
+    // // add the text node to the newly created div
+    // newDiv.appendChild(newContent);
+    //
+    // // add the newly created element and its content into the DOM
+    // var currentDiv = document.getElementById("likes");
+    // document.body.insertBefore(newDiv, currentDiv);
   }
+
+
 });
