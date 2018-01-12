@@ -18,12 +18,10 @@
   <h1 id='counter'>
     0
   </h1>
-  <button id='-' > ➖ </button>
-  <button id='+' > ➕ </button>
-  <button id='<3' > ❤️ </button>
+  <button class="disable" id='-' > ➖ </button>
+  <button class="disable" id='+' > ➕ </button>
+  <button class="disable" id='<3' > ❤️ </button>
   <button id='pause' > pause </button>
-
-  <ul class='likes'></ul>
 
   <div>
     <h3>Comments</h3>
@@ -34,10 +32,13 @@
     <form id="comment-form" action="">
       <input type='text' name="" id="" cols="30" rows="10">
       </br>
-      <button id='submit'>submit</button>
+      <button class="disable" id='submit'>submit</button>
     </form>
 
   </div>
+  <ul class='likes'>
+    <li>Number: 42 | 23 Likes</li>
+  </ul>
 
   <!-- <script src="index.min.js"></script> -->
   <script src="challenge.js"></script>
